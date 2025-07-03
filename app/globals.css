@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide v0 branding button */
+[data-v0-t],
+[data-v0-t] *,
+div[style*="position: fixed"][style*="bottom"][style*="right"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Additional selectors to target v0 branding */
+button[aria-label*="v0"],
+button[aria-label*="Built with"],
+a[href*="v0.dev"],
+div[class*="v0-branding"],
+.v0-badge,
+[class*="v0-watermark"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Hide any floating elements that might be the v0 button */
+div[style*="position:fixed"][style*="z-index"][style*="bottom"][style*="right"] > button,
+div[style*="position: fixed"][style*="z-index"][style*="bottom"][style*="right"] > a {
+  display: none !important;
+}
+
+/* More specific targeting for v0 branding elements */
+[data-testid*="v0"],
+[data-testid*="branding"],
+[id*="v0-branding"],
+[class*="v0-floating"] {
+  display: none !important;
+}
